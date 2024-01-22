@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "444927888009",
+    "project_id": "officefinance-a4079",
+    "storage_bucket": "officefinance-a4079.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444927888009:android:084c6cf07a0510c7401458",
+        "android_client_info": {
+          "package_name": "com.example.office_finances_web"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo83qGOPE9GU_fhujzF9QEoMctSHIj3wI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
