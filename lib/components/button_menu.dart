@@ -139,9 +139,6 @@ class ButtonMenu extends StatelessWidget {
             ]),
           ),
         ),
-        SizedBox(
-          width: width * 0.02,
-        ),
       ],
     );
   }

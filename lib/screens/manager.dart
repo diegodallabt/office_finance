@@ -101,8 +101,8 @@ class _ManagerState extends State<Manager> {
       valor = valor.replaceAll(',', '.');
 
       // obtém o valor do saldo geral
-      final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-      final DocumentSnapshot docSnapshot = await _firestore
+      final FirebaseFirestore firestore = FirebaseFirestore.instance;
+      final DocumentSnapshot docSnapshot = await firestore
           .collection('balance')
           .doc('O5BlDfsHNGR3Jov9GqkP')
           .get();
@@ -111,7 +111,7 @@ class _ManagerState extends State<Manager> {
         saldo = data['saldo'];
         saldo = saldo! + double.parse(valor);
         // atualiza o valor do saldo geral
-        _firestore
+        firestore
             .collection('balance')
             .doc('O5BlDfsHNGR3Jov9GqkP')
             .update({'saldo': saldo});
@@ -137,13 +137,13 @@ class _ManagerState extends State<Manager> {
     _controller.addListener(() {
       final text = _controller.text;
       if (!text.startsWith('R\$') && text.isNotEmpty) {
-        _controller.text = 'R\$' + text;
+        _controller.text = 'R\$$text';
         _controller.selection = TextSelection.fromPosition(
           TextPosition(offset: _controller.text.length),
         );
       }
       if (!text.endsWith(',00') && text.length < 2 && text.isNotEmpty) {
-        _controller.text = text + ',00';
+        _controller.text = '$text,00';
         _controller.selection = TextSelection.fromPosition(
           TextPosition(offset: _controller.text.length - 3),
         );
